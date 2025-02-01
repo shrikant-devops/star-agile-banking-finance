@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shrikant-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: star-agile-project
+  template:
+    metadata:
+      labels:
+        app: star-agile-project
+    spec:
+      containers:
+      - name: my-app
+        image: shrikantdevops/star-agile-project:latest
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://shrikant-db.c982gyackt4t.ap-south-1.rds.amazonaws.com:3306/shrikant"
+        - name: DB_PORT
+          value: "3306"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "admin"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "7000150409"
+        ports:
+        - containerPort: 8081
