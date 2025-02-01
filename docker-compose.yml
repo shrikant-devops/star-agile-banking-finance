@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  app:
+    image: star-agile-project
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://shrikant-db.c982gyackt4t.ap-south-1.rds.amazonaws.com:3306/shrikant
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: 7000150409
+    networks:
+      - backend
+
+  db:
+    image: mysql:8.0
+    container_name: db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: shrikant
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 700015009
+      MYSQL_ROOT_PASSWORD: 7000150409
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+
+networks:
+  backend:
