@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+     agent any
     environment {
         MAVEN_HOME = tool 'maven'
         DOCKER_HOME = tool 'docker'
