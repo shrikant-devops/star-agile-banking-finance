@@ -13,7 +13,7 @@
     command : sudo systemctl start docker
 
   - name: Log in to Docker registry
-    command: docker login -u shrikantdevops -p dckr_pat_hDaoZvK5Bdm4FlMYorZDTl5n6yg
+    command: docker login -u shrikantdevops -p 
 
   - name: Deploy Docker Container
     command: docker run -itd -p 8081:8081 shrikantdevops/star-agile-project
