@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: shrikantdevops/star-agile-project:latest
+          image: shrikantdevops/star-agile-project:arm64
           env:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://database-1.czc46mgoexep.ap-south-1.rds.amazonaws.com/shrikant"
